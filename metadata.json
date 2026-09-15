@@ -1,0 +1,6 @@
+{
+  "name": "Belajar Bahasa Arab Lebih Cepat dengan Tutor Privat",
+  "description": "Mulailah belajar dengan tutor ahli yang merancang kelas sesuai dengan tujuan, gaya belajar, dan jadwalmu bersama Osama Alkhatib.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
