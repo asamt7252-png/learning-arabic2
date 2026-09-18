@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { ProgramTrack, ProgramFormat, TraineeLevel, TraineeRegistration, AppUser } from '../types';
 import { formatRegistrationDateTime } from '../utils/formatters';
+import { syncRegistrationToGoogleSheets } from '../utils/googleSheets';
 
 interface RegistrationModalProps {
   isOpen: boolean;
@@ -290,6 +291,9 @@ Mohon segera diverifikasi dan kita koordinasikan hari serta jam belajarnya, Usta
     setSubmittedReg(newRegistration);
     setErrorMsg('');
     setCurrentStep(3);
+
+    // Automatically sync student registration directly to Google Sheets in background
+    syncRegistrationToGoogleSheets(newRegistration);
 
     // Direct and mandatory automatic redirection to WhatsApp on user submit
     const dtInfo = formatRegistrationDateTime(nowIso);
